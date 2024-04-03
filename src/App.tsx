@@ -34,7 +34,7 @@ function App(): JSX.Element {
       fetch(apiUrl, requestOptions)
         .then((response) => {
           if (method === 'DELETE') {
-            return response.text(); 
+            return response.text();
           } else {
             return response.json();
           }
@@ -76,9 +76,17 @@ function App(): JSX.Element {
         <button onClick={handleSaveToLocal}>Save</button>
       </div>
       <div className='main2'>
-        {res.length === 0 && <p>No data</p>}
-        <h1>Data:</h1>
-        <pre>{JSON.stringify(res, null, 2)}</pre>
+        
+        {method == 'GET' ? (
+          <div>
+            {res.length === 0 && <p>No data</p>}
+            <h1>Data:</h1>
+            <pre>{JSON.stringify(res, null, 2)}</pre>
+          </div>
+        ) : (
+          <div></div>
+        )}
+
       </div>
     </div>
   );
