@@ -5,7 +5,7 @@
     border-radius: 10px;
 }
 
-input{
+.block input{
     width: 401px;
     font-size: 18px;
     margin-left: 10px;
@@ -13,6 +13,24 @@ input{
     border: none;
     outline-color: rgb(53, 187, 187);
     outline: none;
+}
+
+.main2 input{
+    width: 401px;
+    font-size: 16px;
+    padding-left: 10px;
+    height: 25px;
+    margin-left: 10px;
+    margin-top: 5px;
+    border: none;
+    outline-color: rgb(53, 187, 187);
+    outline: none;
+    border: 1px solid gray;
+    border-radius: 8px;
+}
+
+.post{
+    display: flex;
 }
 
 .main{

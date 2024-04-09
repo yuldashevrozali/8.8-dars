@@ -53,8 +53,6 @@ function App(): JSX.Element {
   const handleSaveToLocal = (): void => {
     localStorage.setItem(apiUrl, JSON.stringify(res));
   };
-  console.log(method);
-
 
   return (
     <div>
@@ -78,25 +76,28 @@ function App(): JSX.Element {
         <button onClick={handleSaveToLocal}>Save</button>
       </div>
       <div className='main2'>
-
-        {method == 'GET' ? (
+        {method === 'GET' && (
           <div>
             {res.length === 0 && <p>No data</p>}
             <h1>Data:</h1>
             <pre>{JSON.stringify(res, null, 2)}</pre>
           </div>
-        ) : (
-          <div></div>
         )}
 
-        {method == 'DELETE' ? (
+        {method === 'DELETE' && (
           <div>
             <pre>{JSON.stringify(res, null, 2)}</pre>
           </div>
-        ) : (
-          <div></div>
         )}
 
+        {method === 'POST' && (
+          <div className='post'>
+            <h1>POST Data:</h1>
+            <p>{JSON.stringify({ data: inputValue }, null, 2)}</p>
+            <h1>Response:</h1>
+            <pre>{JSON.stringify(res, null, 2)}</pre>
+          </div>
+        )}
       </div>
     </div>
   );
